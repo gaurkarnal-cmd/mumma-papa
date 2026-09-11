@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You Mummaaa Jii & Papaaa Jii ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Hero Header -->
+    <header class="hero">
+      <div class="badge">👑 World's Best Parents 👑</div>
+      <h1>For You Mummaaa Jii & Papaaa Jii ❤️</h1>
+      <p class="subtitle">A special corner of the internet made just for the two of you!</p>
+      
+      <!-- Top Action Bar -->
+      <div class="popup-btn-container">
+        <button class="badge-btn" onclick="openModal('modalBlessing')">🙏 Special Blessing</button>
+        <button class="badge-btn" onclick="openModal('modalSecret')">🤫 Secret Note</button>
+        <button class="badge-btn glow-btn" id="partyBtn" onclick="togglePartyMode()">🎉 Party Mode: OFF</button>
+      </div>
+    </header>
+
+    <!-- Photo Gallery Section -->
+    <section class="card photo-section">
+      <h2>📸 Precious Memories</h2>
+      <p>Click on any image to view full screen!</p>
+      <div class="photo-grid">
+        <div class="photo-card" onclick="openLightbox('images/IMG_3498.jpg', 'Mummaaa Jii ❤️', 'The heart and warmth of our entire family!')">
+          <div class="photo-frame">
+            <img src="images/IMG_3498.jpg" alt="Mummaaa Jii" />
+          </div>
+          <h3>Mummaaa Jii ❤️</h3>
+          <p class="photo-caption">Queen of our home</p>
+        </div>
+
+        <div class="photo-card" onclick="openLightbox('images/IMG_6141.jpg', 'Together Forever 👩‍❤️‍👨', 'The most beautiful couple ever!')">
+          <div class="photo-frame">
+            <img src="images/IMG_6141.jpg" alt="Together" />
+          </div>
+          <h3>Together Forever 👩‍❤️‍👨</h3>
+          <p class="photo-caption">The ultimate dream team</p>
+        </div>
+
+        <div class="photo-card" onclick="openLightbox('images/IMG_6470.jpg', 'Papaaa Jii 🛡️', 'Our rock, protection & hero!')">
+          <div class="photo-frame">
+            <img src="images/IMG_6470.jpg" alt="Papaaa Jii" />
+          </div>
+          <h3>Papaaa Jii 🛡️</h3>
+          <p class="photo-caption">Our strong pillar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Love Letter Section -->
+    <section class="card letter-section">
+      <h2>📜 A Personal Note</h2>
+      <p>Click the envelope to read my personal message for both of you!</p>
+      <div class="letter-box" id="letterBox" onclick="typeLetter()">
+        <span id="letterPlaceholder">✉️ Tap here to open the letter...</span>
+        <p id="typedText"></p>
+      </div>
+    </section>
+
+    <!-- Interactive Promises Checklist -->
+    <section class="card promises-section">
+      <h2>✨ My Promises To You Both</h2>
+      <p>Check the boxes to seal the promise with hearts!</p>
+      <div class="checklist">
+        <label class="check-item" onclick="handleCheck(this)">
+          <input type="checkbox" />
+          <span>To make you proud every single day 🌟</span>
+        </label>
+        <label class="check-item" onclick="handleCheck(this)">
+          <input type="checkbox" />
+          <span>To never let you worry about the future 🌈</span>
+        </label>
+        <label class="check-item" onclick="handleCheck(this)">
+          <input type="checkbox" />
+          <span>To bring unlimited laughter into our house 😂</span>
+        </label>
+        <label class="check-item" onclick="handleCheck(this)">
+          <input type="checkbox" />
+          <span>To always take care of both of you endlessly 💖</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Interactive Love Meter -->
+    <section class="card love-meter-section">
+      <h2>📊 Family Love Overload Counter</h2>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar">1000% Infinite Love</div>
+      </div>
+      <button class="btn btn-primary" onclick="boostLove()">Boost Love Level 🚀</button>
+    </section>
+
+    <!-- Cute Message Generator -->
+    <section class="card generator-section">
+      <h2>🎁 Daily Surprise Reason</h2>
+      <div class="compliment-box" id="complimentBox">
+        Click below to reveal a sweet message! ✨
+      </div>
+      <button class="btn btn-secondary" onclick="generateMessage()">Generate Message 💌</button>
+    </section>
+
+    <!-- Hugs & Tea Station -->
+    <section class="card interactive-section">
+      <h2>🤗 Virtual Hugs & Refreshments</h2>
+      <div class="btn-group">
+        <button class="btn btn-hug" onclick="sendSurprise('hug')">Send Big Hug 🤗</button>
+        <button class="btn btn-tea" onclick="sendSurprise('tea')">Serve Hot Chai ☕</button>
+        <button class="btn btn-smile" onclick="sendSurprise('smile')">Send Big Smile 😊</button>
+      </div>
+      <div id="interactiveOutput" class="interactive-output"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with ❤️ forever and always for Mummaaa Jii & Papaaa Jii!</p>
+    </footer>
+
+  </div>
+
+  <!-- POPUP MODALS -->
+  <div id="modalBlessing" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modalBlessing')">&times;</span>
+      <h2>🙏 Special Blessing</h2>
+      <p>May Mummaaa Jii and Papaaa Jii always stay blessed with perfect health, long life, endless peace, and smiling faces forever! ❤️✨</p>
+      <button class="btn btn-primary" onclick="closeModal('modalBlessing')">Amen! 🥰</button>
+    </div>
+  </div>
+
+  <div id="modalSecret" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modalSecret')">&times;</span>
+      <h2>🤫 Secret Message</h2>
+      <p>You both are my whole world. Everything good in me comes from you two. Thank you for everything! 💖</p>
+      <button class="btn btn-secondary" onclick="closeModal('modalSecret')">Love You! 😘</button>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeLightbox()">&times;</span>
+      <img id="lightboxImg" src="" alt="Photo" />
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxDesc"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
