@@ -33,7 +33,10 @@ function boostLove() {
 }
 
 // Typewriter Effect for Letter
-const fullLetterText = "Dear Mummaaa Jii & Papaaa Jii, thank you for making our home the happiest place on earth. Your love, patience, and warmth guide us every day. We love you more than words can express! ❤️✨";
+const fullLetterText = "Dear Mummaaa Jii & Papaaa Jii, thank you for making
+  our home the happiest place on earth.
+  Your love, patience, and warmth guide us every day. 
+  We love you more than words can express! ❤️✨";
 let isTyped = false;
 
 function typeLetter() {
